@@ -10,7 +10,6 @@ export class Banco {
         this.diasBanco = diasBanco
         this._horarioAbertura = _horarioAbertura
         this._horarioFechamento = _horarioFechamento
-
     }
     get obterNomeBanco() {
         return this.nomeBanco

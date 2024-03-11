@@ -100,3 +100,46 @@ function algumaCoisa(x) {
 }
 algumaCoisa(10);
 algumaCoisa(true);
+// NEVER - é usado para funções retornam erros
+function showError(msgError) {
+    throw new Error(msgError); // throw - processa os erros
+}
+// showError('Deu erro aqui!')
+// SPREAD E REST no JS
+let umArray = [1, 2, 3, 4, 5];
+let umNovoArray = [...umArray, 6, 7, 8, 9, 10];
+console.log(umNovoArray); // SPREAD
+function umaFuncao(...a) {
+    console.log(a);
+} // REST
+umaFuncao(1);
+umaFuncao(1, 2, 3, 4, 5);
+// DESTRUCTURING COM PARAMETROS DE OBJETOS
+function showProdutos({ nome, preco }) {
+    return `O nome do produto é: ${nome} e o preço dele é ${preco}`;
+}
+const camisa = { nome: 'Camisa de algodão', preco: 39.90 };
+console.log(showProdutos(camisa));
+// READONLY
+const meuReadonly = [['Jeferson']]; // SEMPRE TEM QUE SER FEITO EM CONST
+const fusca = {
+    marca: 'VW',
+    modelo: 'Fusca 1600',
+    qntdPneus: 4
+};
+fusca.marca = 'Ford'; // TENTANDO ALTERAR ATRIBUTOS
+console.log(fusca.marca);
+function showUserDetails(newUser) {
+    return `Seu e-mail é ${newUser.email} sua senha de acesso é ${newUser.senha} e sua regra de acesso é: ${newUser.regra ? newUser.regra : 'SEM REGRAS'}`;
+    //   SE newUser.regra for verdade: imprime newUser; SE NÃO: newUser.regra = 'SEM REGRAS'
+}
+const user10 = {
+    email: 'teste@gmail.com',
+    senha: 123456,
+};
+const user11 = {
+    email: 'teste2@gmail.com',
+    senha: '12kkshf',
+};
+console.log(showUserDetails(user10));
+console.log(showUserDetails(user11));
